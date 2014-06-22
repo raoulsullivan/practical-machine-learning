@@ -28,7 +28,7 @@ set.seed(1337)
 testingfolds <- createFolds(training2$classe,nfolds,list=TRUE,returnTrain=FALSE)
 ```
 
-To construct and test the model the body of the analysis is completed for each fold in order to get some level of cross-validation. Pre-processing is performed using principle components analysis, which reduces the number of variables to 20. A random forests model is then trained against the data resulting from the PCA, using trainControl 'cross validation' to cut down on processing time. I suspect this also folds within the folds.
+To construct and test the model the body of the analysis is completed for each fold in order to get some level of cross-validation. Pre-processing is performed using principle components analysis with a threshold of 0.9, which reduces the number of variables to 20. A random forests model is then trained against the data resulting from the PCA, using trainControl 'cross validation' to cut down on processing time. I suspect this also folds within the folds.
 
 The same preprocessing is performed on the testing data for that fold, before output is predicted.
 
